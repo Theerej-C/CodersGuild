@@ -1,1 +1,3 @@
 coders_guild/db.sqlite3
+coders_guild/coders_guild/__pycache__/
+coders_guild/user/__pycache__/
