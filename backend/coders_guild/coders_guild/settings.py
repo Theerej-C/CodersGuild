@@ -22,6 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-)gv-#f0f_03fgvx)8mbb7w%_gtqgn44=3+#p@4*gq(y@i7!3ue'
 
+REFRESH_TOKEN_SECRET = 'django-insecure-)gv-#f0f_03fgvx)8mbb7w%_gtqgn44=3+#p@4*gq(y@i7!3ue'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -125,7 +127,10 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [ 
-        # ... auth classes here ... 
-    ]
+        "user.authentication.SafeJWTAuthentication"
+    ],
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated', # make all endpoints private
+    )
 }
 
