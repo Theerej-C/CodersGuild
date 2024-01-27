@@ -1,3 +1,5 @@
 django
 djangorestframework
 pyrebase4
+pymongo
+pyjwt
