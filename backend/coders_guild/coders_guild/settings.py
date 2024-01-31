@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'user'
+    'user',
+    'problems'
 ]
 
 MIDDLEWARE = [
@@ -130,7 +131,7 @@ REST_FRAMEWORK = {
         "user.authentication.SafeJWTAuthentication"
     ],
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated', # make all endpoints private
+        'rest_framework.permissions.AllowAny', # make all endpoints private
     )
 }
 
